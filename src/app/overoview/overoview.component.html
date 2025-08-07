@@ -1,0 +1,69 @@
+<div class="space-y-6">
+  <!-- Page Header -->
+  <div class="flex items-center justify-between">
+    <div>
+      <h1 class="text-2xl font-bold text-gray-900">Overview</h1>
+      <p class="text-gray-600">Welcome back, John! Here's what's happening with your projects.</p>
+    </div>
+    <div class="flex space-x-3">
+      <button class="btn-secondary">Export Data</button>
+      <button class="btn-primary">New Project</button>
+    </div>
+  </div>
+
+  <!-- Summary Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <app-summary-card
+      *ngFor="let card of summaryCards"
+      [title]="card.title"
+      [value]="card.value"
+      [change]="card.change"
+      [isPositive]="card.isPositive"
+      [iconPath]="card.iconPath"
+      [iconClass]="card.iconClass">
+    </app-summary-card>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <app-chart
+      title="Monthly Earnings"
+      type="bar"
+      [data]="earningsChartData">
+    </app-chart>
+    
+    <app-chart
+      title="Project Status Distribution"
+      type="doughnut"
+      [data]="projectStatusChartData">
+    </app-chart>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <app-recent-activity></app-recent-activity>
+    
+    <!-- Quick Stats -->
+    <div class="card">
+      <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Stats</h3>
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-600">Active Projects</span>
+          <span class="text-sm font-medium text-gray-900">8</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-600">Completed This Month</span>
+          <span class="text-sm font-medium text-gray-900">12</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-600">Total Hours Logged</span>
+          <span class="text-sm font-medium text-gray-900">248</span>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-sm text-gray-600">Average Project Value</span>
+          <span class="text-sm font-medium text-gray-900">$3,200</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

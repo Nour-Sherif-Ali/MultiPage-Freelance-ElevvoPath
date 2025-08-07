@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-lg font-semibold text-gray-900">Recent Activity</h3>
+    <button class="text-sm text-primary-600 hover:text-primary-800 font-medium">
+      View all
+    </button>
+  </div>
+  
+  <div class="space-y-4">
+    <div *ngFor="let activity of activities; let i = index" 
+         class="flex items-start space-x-3 pb-4"
+         [class.border-b]="i < activities.length - 1"
+         [class.border-gray-200]="i < activities.length - 1">
+      <div class="flex-shrink-0">
+        <div class="w-8 h-8 rounded-full flex items-center justify-center"
+             [ngClass]="getActivityIconClass(activity.type)">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="getActivityIconPath(activity.type)"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p class="text-sm font-medium text-gray-900">{{ activity.title }}</p>
+        <p class="text-sm text-gray-500">{{ activity.description }}</p>
+        <p class="text-xs text-gray-400 mt-1">{{ activity.time }}</p>
+      </div>
+    </div>
+  </div>
+</div>

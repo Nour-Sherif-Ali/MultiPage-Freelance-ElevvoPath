@@ -1,0 +1,56 @@
+<div class="relative">
+  <button 
+    (click)="toggleDropdown()"
+    class="relative p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5-5l5-5h-5v-1c0-1.1-.9-2-2-2s-2 .9-2 2v1h-5l5 5l-5 5h5v1c0 1.1.9 2 2 2s2-.9 2-2v-1z"></path>
+    </svg>
+    <span *ngIf="unreadCount > 0" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+      {{ unreadCount }}
+    </span>
+  </button>
+  
+  <div 
+    *ngIf="isOpen" 
+    class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50"
+  >
+    <div class="p-4 border-b border-gray-200">
+      <h3 class="text-lg font-semibold text-gray-900">Notifications</h3>
+    </div>
+    
+    <div class="max-h-96 overflow-y-auto">
+      <div *ngFor="let notification of notifications; let i = index" 
+           class="p-4 hover:bg-gray-50 transition-colors duration-150"
+           [class.border-b]="i < notifications.length - 1"
+           [class.border-gray-200]="i < notifications.length - 1">
+        <div class="flex items-start">
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 rounded-full flex items-center justify-center"
+                 [ngClass]="getNotificationIconClass(notification.type)">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path *ngIf="notification.type === 'project'" routerLink="projects" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                <path *ngIf="notification.type === 'payment'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                <path *ngIf="notification.type === 'task'" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="ml-3 flex-1">
+            <p class="text-sm font-medium text-gray-900">{{ notification.title }}</p>
+            <p class="text-sm text-gray-500">{{ notification.message }}</p>
+            <p class="text-xs text-gray-400 mt-1">{{ notification.time }}</p>
+          </div>
+          <div *ngIf="!notification.read" class="flex-shrink-0">
+            <div class="w-2 h-2 bg-primary-500 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="p-4 border-t border-gray-200">
+      <button class="text-sm text-primary-600 hover:text-primary-800 font-medium">
+        View all notifications
+      </button>
+    </div>
+  </div>
+</div>

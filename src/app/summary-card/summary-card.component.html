@@ -1,0 +1,26 @@
+<div class="card hover:shadow-md transition-shadow duration-200">
+  <div class="flex items-center justify-between">
+    <div>
+      <p class="text-sm font-medium text-gray-600">{{ title }}</p>
+      <p class="text-2xl font-bold text-gray-900 mt-1">{{ value }}</p>
+      <p class="text-sm mt-1" [ngClass]="changeClass">
+        <span class="inline-flex items-center">
+          <svg *ngIf="isPositive" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17l10-10M17 7H7v10"></path>
+          </svg>
+          <svg *ngIf="!isPositive" class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17L7 7m10 0v10H7"></path>
+          </svg>
+          {{ change }}
+        </span>
+      </p>
+    </div>
+    <div class="flex-shrink-0">
+      <div class="w-12 h-12 rounded-lg flex items-center justify-center" [ngClass]="iconClass">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="iconPath"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

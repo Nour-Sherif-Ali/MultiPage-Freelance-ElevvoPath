@@ -1,0 +1,333 @@
+.profile-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-header {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(229, 231, 235, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.page-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-main-card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  transition: all 0.3s ease-in-out;
+  animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-main-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-sidebar {
+  animation: slideInRight 0.8s ease-out 0.4s both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.profile-avatar {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-avatar::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+
+.profile-avatar:hover::before {
+  opacity: 1;
+  transform: rotate(45deg) translate(50%, 50%);
+}
+
+.profile-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.change-photo-btn {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.change-photo-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+.change-photo-btn:hover::before {
+  left: 100%;
+}
+
+.change-photo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.form-field {
+  transition: all 0.3s ease-in-out;
+}
+
+.form-input {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.form-input:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+}
+
+.form-input:disabled {
+  background: linear-gradient(135deg, #f9fafb, #f3f4f6);
+}
+
+.form-label {
+  transition: all 0.2s ease-in-out;
+}
+
+.form-field:hover .form-label {
+  color: #374151;
+}
+
+.form-actions {
+  animation: slideInUp 0.6s ease-out 0.6s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.action-btn {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease-in-out;
+}
+
+.action-btn:hover::before {
+  left: 100%;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-card:nth-child(1) {
+  animation: slideInRight 0.8s ease-out 0.5s both;
+}
+
+.sidebar-card:nth-child(2) {
+  animation: slideInRight 0.8s ease-out 0.6s both;
+}
+
+.sidebar-card:nth-child(3) {
+  animation: slideInRight 0.8s ease-out 0.7s both;
+}
+
+.card-title {
+  background: linear-gradient(135deg, #1f2937, #374151);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.security-input {
+  transition: all 0.3s ease-in-out;
+}
+
+.security-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.stats-item {
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin: -0.5rem;
+}
+
+.stats-item:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.02));
+  transform: translateX(4px);
+}
+
+.stats-label {
+  transition: color 0.2s ease-in-out;
+}
+
+.stats-item:hover .stats-label {
+  color: #4b5563;
+}
+
+.stats-value {
+  transition: all 0.2s ease-in-out;
+}
+
+.stats-item:hover .stats-value {
+  color: #1f2937;
+  transform: scale(1.05);
+}
+
+.notification-toggle {
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem;
+  border-radius: 6px;
+  margin: -0.5rem;
+}
+
+.notification-toggle:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.02));
+}
+
+.toggle-switch {
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle-switch:checked {
+  background-color: #2563eb;
+}
+
+.toggle-switch:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .profile-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .profile-main-card {
+    padding: 1.5rem;
+  }
+  
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-avatar {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .sidebar-card {
+    padding: 1rem;
+  }
+}

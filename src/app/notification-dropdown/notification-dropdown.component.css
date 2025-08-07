@@ -1,0 +1,93 @@
+.notification-btn {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.notification-btn:hover {
+  background-color: rgba(59, 130, 246, 0.1);
+  transform: scale(1.05);
+}
+
+.notification-badge {
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+.dropdown-container {
+  animation: slideDown 0.2s ease-out;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notification-item {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.notification-item:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(37, 99, 235, 0.02));
+  transform: translateX(2px);
+}
+
+.notification-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+.notification-item:hover .notification-icon {
+  transform: scale(1.1);
+}
+
+.unread-indicator {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.8);
+  }
+}
+
+.dropdown-header {
+  background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+}
+
+.view-all-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.view-all-btn:hover {
+  color: #1d4ed8;
+  transform: translateX(2px);
+}
